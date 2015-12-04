@@ -1,9 +1,12 @@
 package webstore.dao;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -72,9 +75,9 @@ public class ProductDaoImpl implements ProductDAO {
 
 		Criteria c = session.createCriteria(Product.class);
 		Set<Entry<String, List<String>>> params = filterParams.entrySet();
-		for (Entry<String, List<String>> e : params)
+		for (Entry<String, List<String>> e : params) {
 			c.add(Restrictions.in(e.getKey().toLowerCase().trim(), e.getValue()));
-
+		}
 		return c.list();
 	}
 
