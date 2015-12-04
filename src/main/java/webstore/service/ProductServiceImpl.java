@@ -51,4 +51,9 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.getProductsByFilter(filterParams);
 	}
 
+	@Transactional
+	public void addProduct(Product product) {
+		productDao.create(product);
+	}
+
 }

@@ -2,6 +2,7 @@ package webstore.model;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,8 @@ public class Product {
 	private long unitsInStock;
 	private long unitsInOrder;
 	private boolean discontinued;
+	@Column(name = "product_condition")
+	private String condition;
 
 	public Product() {
 
@@ -96,6 +99,14 @@ public class Product {
 
 	public void setUnitsInOrder(long unitsInOrder) {
 		this.unitsInOrder = unitsInOrder;
+	}
+
+	public String getCondition() {
+		return condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
 	}
 
 	public boolean isDiscontinued() {
