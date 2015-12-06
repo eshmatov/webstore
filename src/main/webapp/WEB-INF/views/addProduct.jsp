@@ -3,6 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,6 +16,8 @@
 	<section>
 	<div class="jumbotron">
 		<div class="container">
+			<a href="<c:url value="j_spring_security_logout" />"
+				class="btn btn-danger btn-mini pull-right">Logout</a>
 			<h1>Products</h1>
 			<p>Add products</p>
 		</div>
@@ -27,8 +30,9 @@
 			<legend>Add new product</legend>
 
 			<div class="form-group">
-				<label class="control-label col-lg-2" for="productId">Product
-					Id</label>
+				<label class="control-label col-lg-2" for="productId"> <spring:message
+						code="addProduct.form.productId.label" />
+				</label>
 				<div class="col-lg-10">
 					<form:input path="productId" id="productId" type="text"
 						class="form:input-large" />
