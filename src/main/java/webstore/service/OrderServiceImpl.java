@@ -16,7 +16,7 @@ public class OrderServiceImpl implements OrderService {
 
 	
 	@Transactional(isolation = Isolation.REPEATABLE_READ)
-	@Override
+	 
 	public void processOrder(String productId, int quantity) {
 		Product product = productDao.getProductById(productId);
 
