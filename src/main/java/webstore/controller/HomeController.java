@@ -20,6 +20,11 @@ public class HomeController {
 		model.addAttribute("tagline", "The one and only amazing web store");
 		model.addAttribute("products", productService.getList());
 
+		return "redirect:/welcome/greeting";
+	}
+
+	@RequestMapping("/welcome/greeting")
+	public String greeting() {
 		return "welcome";
 	}
 }
