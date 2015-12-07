@@ -21,8 +21,6 @@ public class LoginController {
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout() {
-	 
-		//.FrameworkServlet.publishRequestHandledEvent d;
-		return "logout";
+		return "login";
 	}
 }
